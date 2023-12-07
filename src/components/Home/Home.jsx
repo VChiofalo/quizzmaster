@@ -25,6 +25,8 @@ const Home = () => {
         Bienvenue sur notre quizz réalisé en React avec Vincent, Fred, Erwan, et Cisco.
         Découvrez des questions passionnantes et testez vos connaissances !
       </p>
+      {/* Ajoutez la balise img avec le chemin de votre image */}
+      <img src='/public/quizMaster.png' alt="Description de l'image" className={styles.yourImageClass} />
       <div className={styles.startButtonContainer}>
         <Link to="/question/1">
           <button>Commencer le quizz</button>
