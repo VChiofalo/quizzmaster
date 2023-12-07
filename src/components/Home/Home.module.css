@@ -1,0 +1,30 @@
+.container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
+  }
+  
+  .startButtonContainer {
+    margin-top: 20px;
+  }
+/* Home.module.css */
+.container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+/* Ajoutez le style pour l'effet de couleur ici */
+.text {
+  color: chartreuse;
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.startButtonContainer {
+  margin-top: 20px;
+}
+
+
+  
