@@ -1,9 +1,8 @@
-import React from 'react';
-
+// 
 function AboutPage() {
   return (
     <div>
-      <h1>À propos de l'équipe</h1>
+      <h1>À propos de la team</h1>
       {/* Détails de l'équipe */}
     </div>
   );

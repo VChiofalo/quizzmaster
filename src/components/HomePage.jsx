@@ -1,13 +1,21 @@
-// import React from 'react';
 import { Link } from 'react-router-dom';
 
-function HomePage() {
+const Home = () => {
   return (
-    <div>
-      <h1>Bienvenue sur notre quiz!</h1>
-      <Link to="/quiz">Commencer le Quiz</Link>
+    <div className="home-container">
+      <h1>Welcome Quizz Master</h1>
+      <p>
+        Bienvenue sur notre quizz réalisé en React avec Vincent, Fred, Erwan, et Cisco.
+        Découvrez des questions passionnantes et testez vos connaissances !
+      </p>
+      <div className="start-button-container">
+        {/* Utilisation de Link pour créer un lien vers la première question du quizz */}
+        <Link to="/question/1">
+          <button>Commencer le quizz</button>
+        </Link>
+      </div>
     </div>
   );
-}
+};
 
-export default HomePage;
+export default Home;

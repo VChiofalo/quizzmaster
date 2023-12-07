@@ -53,6 +53,15 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.home-container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.start-button-container {
+  margin-top: 20px;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
