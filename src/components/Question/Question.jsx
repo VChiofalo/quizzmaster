@@ -8,12 +8,24 @@ function Question() {
 
 
   useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean')
-      .then(response => response.json())
-      .then(data => {
-        setQuestions(data.results);
-      })
-      .catch(error => console.error('Erreur lors de la récupération des questions', error));
+    // fetch('https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log(data.results[0].question)
+    //     setQuestions(data.results);
+    //   })
+    //   .catch(error => console.error('Erreur lors de la récupération des questions', error));
+
+    const fetchData = async () => {
+      const response = await fetch('https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean');
+      const data = await response.json()
+      console.log(data)
+      setQuestions(data.results)
+    }
+
+    fetchData()
+
+    
   }, []);
 
   const handleAnswerChange = (value) => {
@@ -30,38 +42,47 @@ function Question() {
       }
       return prevIndex + 1;
     });
+
+    
   }
 
 
   return (
     <div className="quiz-container">
       <h1>Quizmaster</h1>
-      <p>{questions.question}</p>
-      <div className="options">
-        <label>
-          <input
-            type="radio"
-            name="answer"
-            value="true"
-            checked={selectedAnswer === 'true'}
-            onChange={() => handleAnswerChange('true')}
-          />
-          Vrai
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="answer"
-            value="false"
-            checked={selectedAnswer === 'false'}
-            onChange={() => handleAnswerChange('false')}
-          />
-          Faux
-        </label>
-      </div>
+      {questions && questions.length > 1 && questions.map((quest, index) => (
+        // Utilisation de la clé unique pour chaque élément
+        <div key={index} style={{ display: index === currentQuestionIndex ? 'block' : 'none' }}>
+          <p dangerouslySetInnerHTML={{ __html: quest.question }}></p>
+          {console.log(quest.question)}
+          <div className="options">
+            <label>
+              <input
+                type="radio"
+                name="answer"
+                value="true"
+                checked={selectedAnswer === 'true'}
+                onChange={() => handleAnswerChange('true')}
+              />
+              Vrai
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="answer"
+                value="false"
+                checked={selectedAnswer === 'false'}
+                onChange={() => handleAnswerChange('false')}
+              />
+              Faux
+            </label>
+          </div>
+        </div>
+      ))}
       <button onClick={handleNextQuestion}>Valider</button>
     </div>
   );
 }
 
 export default Question;
+
