@@ -31,7 +31,7 @@ const Home = () => {
         className={`${styles.yourImageClass} ${styles.leftShift}`}
       />
       <div className={styles.startButtonContainer}>
-        <Link to="/question/1">
+        <Link to="/question">
           {/* Ajoutez la classe neonButton au bouton */}
           <button className={`${styles.neonButton}`}>
             <span></span>
