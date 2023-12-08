@@ -1,4 +1,5 @@
 import  { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom"
 import './style.css';
 
 function Question() {
@@ -6,6 +7,7 @@ function Question() {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -22,7 +24,9 @@ function Question() {
       // Vérifier si c'est la dernière question
       if (prevIndex === questions.length - 1) {
         // Peut-être rediriger vers une page de résultats ou afficher un message
-        <Link to= state={{score: score}}></Link>
+        console.log('Quizz terminé');
+        console.log({score});
+        navigate('/result', {state: {score}});
         return prevIndex;
       }
       console.log(selectedAnswer);
@@ -32,7 +36,7 @@ function Question() {
 
   function handleAnswer(answer) {
     if (questions[currentQuestionIndex].correct_answer === (answer ? 'True' : 'False')) {
-      setScore(prevScore++);
+      setScore(prevScore => prevScore +1);
     }
     handleNextQuestion();
   }
