@@ -20,12 +20,27 @@ const Result = ()=>{
     const message = getMessageForScore(score);
     return(
         <div className={styles.container}>
-            <h1>Resultats</h1>
-            <p>Votre score : {score} / 10</p>
-            <p>{message}</p>
+            <h1 className={styles.h1}>Resultats</h1>
+            <p className={styles.p}>Votre score : {score} / 10</p>
+            <p className={styles.p}>{message}</p>
             <div className={styles.startButtonContainer}>
+                <Link to="/question">
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Recommencer le quizz
+                    </button>
+                </Link>
                 <Link to="/">
-                    <button>Recommencer le quizz</button>
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Retourner à l'accueil
+                    </button>
                 </Link>
             </div>
         </div>

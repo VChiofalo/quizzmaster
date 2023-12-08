@@ -21,7 +21,7 @@ const Home = () => {
       <h1 className={styles.text} ref={colorText}>
         <span className={styles.text}>Welcome</span> Quiz Master!!!
       </h1>
-      <p>
+      <p className={styles.p}>
         Bienvenue sur notre quizz réalisé en React avec un temps très limité et avec la collaboration Vincent, Fred, Erwan, et Cisco29.
         Découvrez des questions passionnantes et testez vos connaissances !
       </p>

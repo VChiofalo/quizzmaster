@@ -18,7 +18,9 @@ position: relative;
 z-index: 1;
 }
 
-
+.p{
+  color: white;
+}
 
 h1{
 position: relative;
