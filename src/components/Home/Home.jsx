@@ -25,19 +25,24 @@ const Home = () => {
         Bienvenue sur notre quizz réalisé en React avec Vincent, Fred, Erwan, et Cisco.
         Découvrez des questions passionnantes et testez vos connaissances !
       </p>
-      <img src='/public/quizMaster.png' alt="Description de l'image" className={`${styles.yourImageClass} ${styles.leftShift}`} />
+      <img
+        src='/public/quizMaster1.png'
+        alt="Description de l'image"
+        className={`${styles.yourImageClass} ${styles.leftShift}`}
+      />
       <div className={styles.startButtonContainer}>
         <Link to="/question/1">
           {/* Ajoutez la classe neonButton au bouton */}
-          <button className={`${styles.neonButton}`}><span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Commencez le quiz</button>
+          <button className={`${styles.neonButton}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Commencez le quiz
+          </button>
         </Link>
       </div>
     </div>
   );
 };
-
 export default Home;
