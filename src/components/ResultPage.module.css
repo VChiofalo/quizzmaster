@@ -1,5 +1,5 @@
-/* ResultPage.module.css */
-.message {
+
+/* .message {
     color: chartreuse;
     font-size: 30px;
     text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
@@ -18,4 +18,37 @@
   
 .startButtonContainer {
     margin-top: 20px;
+}
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f1f3f5;
+  background-color: #031321 !important;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fusionner les styles pour .container et .home-container */
+.container, .home-container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+/* Fusionner les styles pour .startButtonContainer et .start-button-container */
+.startButtonContainer, .start-button-container {
+  margin-top: 20px;
+}
+
+/* Style pour .p */
+.p {
+  color: white;
+}
+
+/* Style pour .h1 */
+.h1 {
+  color: white;
 }
