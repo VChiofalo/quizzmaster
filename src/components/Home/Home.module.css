@@ -28,14 +28,16 @@ h1{
   text-transform: uppercase;
   font-weight: 500;
 }
+
 h1 span
 {
   color: #555;
   transition: 0.25s;
+  font-size: 1.5em;
 }
 h1:hover span
 {
-color: #0f0;
+color: chartreuse;
 text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
 
 }
@@ -45,7 +47,7 @@ text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
 .leftShift {
   margin-left: -80px; /* Ajustez la valeur de la marge gauche selon vos besoins */
 }
-
+/* code pour le bouton neon light 'commencez le quiz */
 .neonButton {
   position: relative;
   display: inline-block;

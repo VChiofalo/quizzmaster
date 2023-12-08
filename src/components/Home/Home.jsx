@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.text} ref={colorText}>
-        <span className={styles.text}>Welcome</span> Quiz Master
+        <span className={styles.text}>Welcome</span> Quiz Master!!!
       </h1>
       <p>
         Bienvenue sur notre quizz réalisé en React avec Vincent, Fred, Erwan, et Cisco.
