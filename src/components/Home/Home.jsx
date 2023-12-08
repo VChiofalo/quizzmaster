@@ -26,7 +26,7 @@ const Home = () => {
         Découvrez des questions passionnantes et testez vos connaissances !
       </p>
       <img
-        src='/public/quizMaster1.png'
+        src='/quizMaster1.png'
         alt="Description de l'image"
         className={`${styles.yourImageClass} ${styles.leftShift}`}
       />
