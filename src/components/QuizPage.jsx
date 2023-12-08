@@ -1,5 +1,6 @@
 import  { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './QuizPage.module.css';
 
 
 function QuizPage() {
@@ -47,8 +48,9 @@ function QuizPage() {
   
   
   return (
-    <div>
-      {questions && questions.length> 0 ? (
+    <div className={styles.quizContainer}>
+      <h1>Quizmaster</h1>
+       {questions && questions.length> 0 ? (
     <div>
       <p dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex]?.question }}></p>
       <button onClick={() => setSelectedAnswer(true)}>Vrai</button>

@@ -1,12 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
 import './index.css'
 import HomePage from './components/HomePage';
 import QuizPage from './components/QuizPage';
 import ResultPage from './components/ResultPage';
-// import AboutPage from './components/AboutPage';
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 

@@ -10,4 +10,12 @@
     color: #255784;
     text-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
   }
+  .container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
+}
   
+.startButtonContainer {
+    margin-top: 20px;
+}
