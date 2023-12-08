@@ -44,7 +44,7 @@ function ResultPage() {
             <span></span>
             <span></span>
             <span></span>
-            Retourner à l'accueil
+            Retourner à l&apos;accueil
           </button>
         </Link>
       </div>
