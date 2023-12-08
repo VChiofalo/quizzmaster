@@ -41,8 +41,19 @@ const Home = () => {
             Commencez le quiz
           </button>
         </Link>
+     {/* Nouveau bouton "À propos de nous" */}
+     <Link to="/about-us">
+  <button className={`${styles.neonButton} ${styles.aboutUsButton}`}>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    À propos de nous
+  </button>
+</Link>
       </div>
     </div>
   );
 };
+
 export default Home;
