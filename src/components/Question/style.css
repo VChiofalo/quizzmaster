@@ -6,7 +6,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
   }
   
   .quiz-container {
@@ -14,6 +13,12 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 302px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
   
   .options {
@@ -26,15 +31,95 @@ body {
   }
   
   button {
-    padding: 10px;
-    background-color: #4caf50;
-    /* color: #fff; */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #f3f4f3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    background-color: #031321;
   }
   
   button:hover {
-    background-color: #45a049;
+    color: #031321;
+    background: #f8f9fa;
+    box-shadow: 0 0 10px #f6f7f8, 0 0 40px #f6f7f8, 0 0 80px #f6f7f8;
+    transition-delay: 1s; 
+  }
+
+  button span {
+    position: absolute;
+    display: block;
+  }
+  
+  button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f6f7f8);
+  }
+  
+  button:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+  }
+  
+  button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #f6f7f8);
+  }
+  
+  button:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+  }
+  button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #f6f7f8);
+  }
+  
+  button:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+  }
+  
+  button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #f6f7f8);
+  }
+  
+  button:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+  }
+
+  .btnTrueFalse{
+    display: flex;
+    justify-content: center;
+  }
+
+  #btnTrue{
+    margin-right: 5px;
+  }
+
+  #btnFalse{
+    margin-left: 5px;
   }
   

@@ -4,7 +4,7 @@ import './style.css';
 
 function Question() {
   const [questions, setQuestions] = useState([]);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const navigate = useNavigate();
@@ -58,11 +58,31 @@ function Question() {
         <div key={index} style={{ display: index === currentQuestionIndex ? 'block' : 'none' }}>
           <p dangerouslySetInnerHTML={{ __html: currentQuestion.question }}></p>
           {console.log(currentQuestion.question)}
-          <button onClick={() =>{setSelectedAnswer(true)}}>Vrai</button>
-          <button onClick={() =>{setSelectedAnswer(false)}}>Faux</button>
+          <div className='btnTrueFalse'>
+            <button style={{backgroundColor: selectedAnswer === "True" ? "orange" : ""}} id='btnTrue' onClick={() =>{setSelectedAnswer("True")}}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Vrai
+            </button>
+            <button style={{backgroundColor: selectedAnswer === "False" ? "orange" : ""}}  id='btnFalse' onClick={() =>{setSelectedAnswer("False")}}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Faux
+            </button>
+          </div>
         </div>
       ))}
-      <button onClick={validateAnswer}>Valider</button>
+      <button onClick={validateAnswer}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Valider
+      </button>
     </div>
   );
 }
