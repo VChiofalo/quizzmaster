@@ -22,7 +22,7 @@ const Home = () => {
         <span className={styles.text}>Welcome</span> Quiz Master!!!
       </h1>
       <p>
-        Bienvenue sur notre quizz réalisé en React avec Vincent, Fred, Erwan, et Cisco.
+        Bienvenue sur notre quizz réalisé en React avec un temps très limité et avec la collaboration Vincent, Fred, Erwan, et Cisco29.
         Découvrez des questions passionnantes et testez vos connaissances !
       </p>
       <img
