@@ -1,9 +1,12 @@
 import  { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 function QuizPage() {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const navigate = useNavigate();
   // Autres états et logiques nécessaires...
 
   useEffect(() => {
@@ -11,6 +14,7 @@ function QuizPage() {
       .then(response => response.json())
       .then(data => {
         setQuestions(data.results);
+        // console.log(data.results);
       })
       .catch(error => console.error('Erreur lors de la récupération des questions', error));
   }, []);
@@ -19,21 +23,27 @@ function QuizPage() {
     setCurrentQuestionIndex(prevIndex => {
       // Vérifier si c'est la dernière question
       if (prevIndex === questions.length - 1) {
-        // Peut-être rediriger vers une page de résultats ou afficher un message
-        console.log('Quiz terminé');
+        navigate('/result', { state: { score } }); // Rediriger vers ResultPage avec le score
         return prevIndex;
       }
       return prevIndex + 1;
     });
   }
+  function handleAnswer(isCorrect) { // Corriger 'isCoreect' en 'isCorrect'
+    if (questions[currentQuestionIndex].correct_answer === (isCorrect ? "True" : "False")) {
+      setScore(prevScore => prevScore + 1);
+    }
+    handleNextQuestion();
+  }
   
   return (
     <div>
-      {questions.length > 0 ? (
-        <div>
-          <p dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex]?.question }}></p>
-          <button onClick={handleNextQuestion}>Valider</button>
-        </div>
+      {questions && questions.length> 0 ? (
+    <div>
+      <p dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex]?.question }}></p>
+      <button onClick={() => handleAnswer(true)}>Vrai</button>
+      <button onClick={() => handleAnswer(false)}>Faux</button>
+    </div>
       ) : (
         <p>Chargement des questions...</p>
       )}
