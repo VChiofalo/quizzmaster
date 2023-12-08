@@ -1,0 +1,13 @@
+/* ResultPage.module.css */
+.message {
+    color: chartreuse;
+    font-size: 30px;
+    text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
+    transition: color 0.25s;
+  }
+  
+  .message:hover {
+    color: #255784;
+    text-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  }
+  

@@ -6,15 +6,14 @@ function QuizPage() {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
   const navigate = useNavigate();
-  // Autres états et logiques nécessaires...
 
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean')
       .then(response => response.json())
       .then(data => {
         setQuestions(data.results);
-        // console.log(data.results);
       })
       .catch(error => console.error('Erreur lors de la récupération des questions', error));
   }, []);
@@ -29,20 +28,33 @@ function QuizPage() {
       return prevIndex + 1;
     });
   }
-  function handleAnswer(isCorrect) { // Corriger 'isCoreect' en 'isCorrect'
-    if (questions[currentQuestionIndex].correct_answer === (isCorrect ? "True" : "False")) {
+  function handleAnswer(answer) {
+    if (questions[currentQuestionIndex].correct_answer === (answer ? "True" : "False")) {
       setScore(prevScore => prevScore + 1);
     }
     handleNextQuestion();
   }
+  
+  function validateAnswer() {
+    if (selectedAnswer === null) {
+      alert("Veuillez sélectionner une réponse !");
+    } else {
+      console.log(selectedAnswer);
+      handleAnswer(selectedAnswer);
+      setSelectedAnswer(null); // Réinitialiser la réponse sélectionnée
+    }
+  }
+  
   
   return (
     <div>
       {questions && questions.length> 0 ? (
     <div>
       <p dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex]?.question }}></p>
-      <button onClick={() => handleAnswer(true)}>Vrai</button>
-      <button onClick={() => handleAnswer(false)}>Faux</button>
+      <button onClick={() => setSelectedAnswer(true)}>Vrai</button>
+      <button onClick={() => setSelectedAnswer(false)}>Faux</button>
+      <button onClick={validateAnswer}>Valider</button>
+
     </div>
       ) : (
         <p>Chargement des questions...</p>

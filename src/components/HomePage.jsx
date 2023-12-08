@@ -1,17 +1,39 @@
+//import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import styles from './Home.module.css';
+import { useEffect, useRef } from 'react';
 const Home = () => {
+  const colorText = useRef(null);
+
+  useEffect(() => {
+    // Code JavaScript pour l'effet de couleur
+    colorText.current.innerHTML = colorText.current.innerText
+      .split('')
+      .map(
+        (letters, i) =>
+          `<span style="transition-delay:${i * 40}ms;filter:hue-rotate(${i * 30}deg)">${letters}</span>`
+      )
+      .join('');
+  }, []);
+
   return (
-    <div className="home-container">
-      <h1>Welcome Quizz Master</h1>
+    <div className={styles.container}>
+      <h1 className={styles.text} ref={colorText}>
+        <span className={styles.text}>Welcome</span> Quiz Master!!!
+      </h1>
       <p>
         Bienvenue sur notre quizz réalisé en React avec Vincent, Fred, Erwan, et Cisco.
         Découvrez des questions passionnantes et testez vos connaissances !
       </p>
-      <div className="start-button-container">
-        {/* Utilisation de Link pour créer un lien vers la première question du quizz */}
+      <img src='/public/quizMaster.png' alt="Description de l'image" className={`${styles.yourImageClass} ${styles.leftShift}`} />
+      <div className={styles.startButtonContainer}>
         <Link to="/question/1">
-          <button>Commencer le quizz</button>
+          {/* Ajoutez la classe neonButton au bouton */}
+          <button className={`${styles.neonButton}`}><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Commencez le quiz</button>
         </Link>
       </div>
     </div>
