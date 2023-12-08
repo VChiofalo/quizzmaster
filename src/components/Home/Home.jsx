@@ -29,7 +29,11 @@ const Home = () => {
       <div className={styles.startButtonContainer}>
         <Link to="/question/1">
           {/* Ajoutez la classe neonButton au bouton */}
-          <button className={`${styles.neonButton}`}>Commencer le Quiz</button>
+          <button className={`${styles.neonButton}`}><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Commencez le quiz</button>
         </Link>
       </div>
     </div>

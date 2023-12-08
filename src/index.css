@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #efb6b6;
+  color: #031321;
+  background-color: #031321;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,5 +22,7 @@
   .start-button-container {
     margin-top: 20px;
   }
+  
+  
   
 
